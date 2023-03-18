@@ -21,17 +21,26 @@ function Pricing() {
       price: event.target.value
     })
   }
+
+  function toggleHandler(event){
+    console.log(event.target.checked);
+    setData({
+      ...data,
+      monthlyBilling:event.target.checked 
+    })
+  }
+
     return (
     <form className='pricing-component'>
-      <h4>100k pageviews</h4>
+      <h4>{Math.round((100/16)*data.price)}k pageviews</h4>
     <UnstyledSlider min={MIN} max={MAX} data={data} handleChange={changeHandler} />
       <p className='sliderLable'>
-      <span className='price'>${data.price}.00</span><span>/ month</span>
+      <span className='price'>${( data.monthlyBilling ? data.price*0.8 : data.price ).toFixed(2)}</span><span>/ month</span>
       </p>
       <div className='options'>
         <p>
           <span className='label'>Monthly Billing</span>
-    <UnstyledSwitches />
+    <UnstyledSwitches data={data} handleToggle={toggleHandler} />
         </p>
         <p>
           <span className='label'>Yearly Billing</span>{' '}

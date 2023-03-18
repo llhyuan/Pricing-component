@@ -83,12 +83,12 @@ const Root = styled('span')(
 )
 
 
-export default function UnstyledSwitches() {
+export default function UnstyledSwitches({data, handleToggle}) {
   const label = { slotProps: { input: { 'aria-label': 'Demo switch' } } };
 
   return (
     <>
-      <SwitchUnstyled component={Root} {...label} />
+      <SwitchUnstyled component={Root} {...label} onChange={handleToggle} />
     </>
   );
 }
