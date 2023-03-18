@@ -1,10 +1,15 @@
 import * as React from 'react';
 import { styled, alpha, Box } from '@mui/system';
 import SliderUnstyled, { sliderUnstyledClasses } from '@mui/base/SliderUnstyled';
-import sliderIcon from '../assets/images/icon-slider.svg'
 
-const green = {
-  'main': 'hsl(174, 77%, 80%)', 
+const blue = {
+  100: '#DAECFF',
+  200: '#99CCF3',
+  400: '#3399FF',
+  300: '#66B2FF',
+  500: '#007FFF',
+  600: '#0072E5',
+  900: '#003A75',
 };
 
 const grey = {
@@ -22,13 +27,13 @@ const grey = {
 
 const StyledSlider = styled(SliderUnstyled)(
   ({ theme }) => `
-  color: ${green.main};
-  height: 1rem;
+  color: ${theme.palette.mode === 'light' ? blue[500] : blue[300]};
+  height: 6px;
   width: 100%;
-  padding: 1rem 0;
+  padding: 16px 0;
   display: inline-block;
   position: relative;
-  cursor: pointers
+  cursor: pointer;
   touch-action: none;
   -webkit-tap-highlight-color: transparent;
 
@@ -47,8 +52,8 @@ const StyledSlider = styled(SliderUnstyled)(
     display: block;
     position: absolute;
     width: 100%;
-    height: 0.5rem;
-    border-radius: 0.5rem;
+    height: 4px;
+    border-radius: 2px;
     background-color: currentColor;
     opacity: 0.4;
   }
@@ -56,38 +61,34 @@ const StyledSlider = styled(SliderUnstyled)(
   & .${sliderUnstyledClasses.track} {
     display: block;
     position: absolute;
-    height: 0.5rem;
-    border-radius: 0.5rem;
+    height: 4px;
+    border-radius: 2px;
     background-color: currentColor;
   }
 
   & .${sliderUnstyledClasses.thumb} {
     position: absolute;
-    width: 3rem;
-    height: 3rem;
-    margin-left: -1.5rem;
-    margin-top: -1.3rem;
+    width: 16px;
+    height: 16px;
+    margin-left: -6px;
+    margin-top: -6px;
     box-sizing: border-box;
     border-radius: 50%;
-    box-shadow: 0.5rem 1rem 2rem 5px hsl(174, 70%, 80%);
     outline: 0;
-    background-color: hsl(174, 86%, 45%);
-    background-image: url( ${sliderIcon} );
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1.5rem;
+    border: 3px solid currentColor;
+    background-color: #fff;
 
     :hover,
     &.${sliderUnstyledClasses.focusVisible} {
       box-shadow: 0 0 0 0.25rem ${alpha(
-        green.main,
+        theme.palette.mode === 'light' ? blue[400] : blue[300],
         0.15,
       )};
     }
 
     &.${sliderUnstyledClasses.active} {
       box-shadow: 0 0 0 0.25rem ${alpha(
-        green.main,
+        theme.palette.mode === 'light' ? blue[200] : blue[300],
         0.3,
       )};
     }
@@ -95,10 +96,11 @@ const StyledSlider = styled(SliderUnstyled)(
 `,
 );
 
-export default function UnstyledSlider({ min, max, handleChange }) {
+export default function Styledslider() {
   return (
-    <>
-      <StyledSlider defaultValue={16} min={min} max={max} onChange={handleChange} />
-    </>
+    <Box sx={{ width: 320 }}>
+      <StyledSlider defaultValue={50} />
+      <StyledSlider defaultValue={10} disabled />
+    </Box>
   );
 }

@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { styled } from '@mui/system'
 import SwitchUnstyled, { switchUnstyledClasses } from '@mui/base/SwitchUnstyled'
 
@@ -6,9 +7,9 @@ const green = {
 }
 
 const grey = {
-  400: '#8c959f',
-  500: '#6e7781',
-  600: '#57606a',
+  400: 'hsl(224, 65%, 95%)',
+  500: 'hsl(224, 65%, 95%)',
+  600: 'hsl(224, 65%, 95%)',
 }
 
 const Root = styled('span')(
@@ -81,21 +82,13 @@ const Root = styled('span')(
   `
 )
 
-export default function UnstyledSwitches({ setValue, data }) {
-  const label = { slotProps: { input: { 'aria-label': 'Monthly billing' } } }
+
+export default function UnstyledSwitches() {
+  const label = { slotProps: { input: { 'aria-label': 'Demo switch' } } };
 
   return (
     <>
-      <SwitchUnstyled
-        component={Root}
-        {...label}
-        onChange={(e) => {
-          setValue({
-            ...data,
-            monthlyBilling: e.target.checked,
-          })
-        }}
-      />
+      <SwitchUnstyled component={Root} {...label} />
     </>
-  )
+  );
 }

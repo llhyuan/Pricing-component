@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import '../scss/_Pricing.scss'
-import Styledslider from './Slider.jsx'
-import Switch from './Switch'
 import checkIcon from '../assets/images/icon-check.svg'
+import UnstyledSlider from './Slider'
+import UnstyledSwitches from './Switch'
+import '../scss/_Pricing.scss'
 
 const MIN = 5
 const MAX = 30
@@ -13,30 +13,25 @@ const initialState = {
 
 function Pricing() {
   const [data, setData] = useState(initialState);
-  console.log(data);
-  return (
+
+  function changeHandler(event){
+    console.log(event.target.value);
+    setData({
+      ...data,
+      price: event.target.value
+    })
+  }
+    return (
     <form className='pricing-component'>
       <h4>100k pageviews</h4>
-      <input
-        className='priceRange-hide'
-        type='range'
-        name='price'
-        value={data.price}
-      />
-      <Styledslider min={MIN} max={MAX} data={data} setValue={setData} />
-      <p>
-        <span>${data.price}</span>/month
+    <UnstyledSlider min={MIN} max={MAX} data={data} handleChange={changeHandler} />
+      <p className='sliderLable'>
+      <span className='price'>${data.price}.00</span><span>/ month</span>
       </p>
       <div className='options'>
-        <input
-          className='billingOption-hide'
-          type='checkbox'
-          name='monthlyBilling'
-          checked={data.monthlyBilling}
-        />
         <p>
           <span className='label'>Monthly Billing</span>
-          <Switch setValue={setData} data={data} />
+    <UnstyledSwitches />
         </p>
         <p>
           <span className='label'>Yearly Billing</span>{' '}

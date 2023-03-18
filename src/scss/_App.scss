@@ -17,10 +17,14 @@
   color: v.$color-mainText;
   position: relative;
   padding: 1px;
-  background-color: rgb(250, 250, 251) ;
-  z-index: -20;
-
-  .background {
+  .background1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -20;
+    background-color: rgb(250, 250, 251);
+  }
+  .background2 {
     position: absolute;
     background-color: v.$color-mainBackground;
     width: 100%;
@@ -36,6 +40,10 @@
       color: v.$color-header;
       margin-bottom: 0.8rem;
     }
-  }
+    p {
+      font-size: 1rem;
+      line-height: 1.7rem;
 
+    }
+  }
 }
