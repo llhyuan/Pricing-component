@@ -11,7 +11,7 @@
   padding: 3rem 2rem;
   border-radius: 1rem;
   margin: 0 auto;
-  h4 {
+  h1 {
     font-size: 1rem;
     letter-spacing: 0.3rem;
     margin-bottom: 2rem;
@@ -85,7 +85,7 @@
 @media only screen and (min-width: 599px){
   .pricing-component {
     position: relative;
-    h4 {
+    h1 {
       position: relative;
       left: -10rem;
     }
