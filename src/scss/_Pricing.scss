@@ -33,22 +33,22 @@
   }
   .options {
     font-size: 0.8rem;
-    width: 80%;
+    width: 95%;
     display: flex;
     justify-content: space-around;
     p {
       display: flex;
       align-items: center;
+      justify-content: space-around;
+      width: max(9.7rem, 40%);
       .label {
         display: inline-block;
-        margin: 10px;
       }
       .billingRate {
         display: inline-block;
         font-size: 0.7rem;
         color: v.$color-discountText;
         padding: 0.1rem 0.5rem;
-        margin: 0 10px;
         border-radius: 1rem;
         background-color: v.$color-discountBackground;
       }
@@ -82,7 +82,7 @@
   }
 }
 
-@media only screen and (min-width: 599px){
+@media only screen and (min-width: 34em){
   .pricing-component {
     position: relative;
     h1 {

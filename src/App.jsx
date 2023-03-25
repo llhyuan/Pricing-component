@@ -4,7 +4,7 @@ import './scss/_App.scss'
 
 function App() {
   return (
-   <main className='component-container'>
+   <div className='component-container'>
     <div className='background1'>
       
     </div>
@@ -14,7 +14,7 @@ function App() {
         <p>Sign-up for our 30-day trial.<br/> No credit card required.</p>
       </header>
     <Pricing />
-    </main> 
+    </div> 
   )
 }
 

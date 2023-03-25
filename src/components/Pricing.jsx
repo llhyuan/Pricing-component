@@ -32,7 +32,7 @@ function Pricing() {
 
     return (
     <form className='pricing-component'>
-      <h4>{Math.round((100/16)*data.price)}k pageviews</h4>
+      <h1>{Math.round((100/16)*data.price)}k pageviews</h1>
     <UnstyledSlider min={MIN} max={MAX} data={data} handleChange={changeHandler} />
       <p className='sliderLable'>
       <span className='price'>${( data.monthlyBilling ? data.price*0.8 : data.price ).toFixed(2)}</span><span>/ month</span>

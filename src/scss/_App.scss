@@ -11,6 +11,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  font-size: 15px;
+}
 .component-container {
   font-family: Manrope;
   font-size: v.$size-mainText;
@@ -18,6 +22,7 @@
   position: relative;
   padding: 1px;
   padding-bottom: 6rem;
+  min-width: 27rem;
   .background1 {
     position: absolute;
     width: 100%;
