@@ -27,15 +27,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-![](./screenshot.jpg)
-![](./screenshot.jpg)
+![Screenshot1](./public/Screenshot1.png)
+![Screenshot2](./public/Screenshot2.png)
+![Screenshot3](./public/Screenshot3.png)
 
 
 ### Links
 
 - Solution URL: [Github Repository](https://github.com/llhyuan/Pricing-component)
-- Live Site URL: [Github Page](https://your-live-site-url.com)
+- Live Site URL: [Github Page](https://llhyuan.github.io/Pricing-component/)
 
 ## My process
 
